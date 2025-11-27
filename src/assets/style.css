@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+input, textarea, button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
