@@ -1,17 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../assets/Navbar.css"; // import CSS file
 
 const Navbar = () => {
-  const navStyle = {
-    padding: "15px",
-    background: "#333",
-    color: "#fff",
-    display: "flex",
-    gap: "20px"
-  };
-
   return (
-    <nav style={navStyle}>
+    <nav className="navbar">
       <Link to="/">Home</Link>
       <Link to="/categories">Categories</Link>
       <Link to="/search">Search</Link>

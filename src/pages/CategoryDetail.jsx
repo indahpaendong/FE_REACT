@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import api from "../services/api";
+import "../assets/CategoryDetail.css"; // import CSS
 
 export default function CategoryDetail() {
   const { id } = useParams();
@@ -30,20 +31,18 @@ export default function CategoryDetail() {
   if (!category) return <p>Kategori tidak ditemukan.</p>;
 
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-3">
-        Kategori: {category.name}
-      </h1>
+    <div className="category-detail-page">
+      <h1>Kategori: {category.name}</h1>
 
-      <h2 className="text-xl font-semibold mb-2">Artikel dalam kategori ini:</h2>
+      <h2>Artikel dalam kategori ini:</h2>
 
       {articles.length === 0 ? (
         <p>Belum ada artikel.</p>
       ) : (
-        <ul className="flex flex-col gap-3">
+        <ul>
           {articles.map((a) => (
-            <li key={a.id} className="border p-3 rounded">
-              <h3 className="text-lg font-bold">{a.title}</h3>
+            <li key={a.id}>
+              <h3>{a.title}</h3>
               <p>{a.summary}</p>
             </li>
           ))}

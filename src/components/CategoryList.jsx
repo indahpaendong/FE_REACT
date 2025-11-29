@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getCategories } from "../services/categories";
+import "../assets/CategoryList.css"; // import CSS
 
 export default function CategoryList() {
   const [categories, setCategories] = useState([]);
@@ -18,11 +19,11 @@ export default function CategoryList() {
   if (loading) return <p>Loading categories...</p>;
 
   return (
-    <div>
-      <h2 className="text-xl font-bold mb-3">Categories</h2>
-      <ul className="flex flex-col gap-2">
+    <div className="category-list">
+      <h2>Categories</h2>
+      <ul>
         {categories.map((cat) => (
-          <li key={cat.id} className="border p-2 rounded hover:bg-gray-100">
+          <li key={cat.id}>
             <Link to={`/category/${cat.id}`}>{cat.name}</Link>
           </li>
         ))}

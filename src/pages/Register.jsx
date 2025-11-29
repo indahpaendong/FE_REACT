@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../assets/Register.css";
 
 const Register = () => {
   const [form, setForm] = useState({
@@ -7,14 +8,6 @@ const Register = () => {
     password: "",
     confirmPassword: "",
   });
-
-  const formStyle = {
-    display: "flex",
-    flexDirection: "column",
-    gap: "10px",
-    maxWidth: "300px",
-    marginTop: "20px",
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,10 +21,10 @@ const Register = () => {
   };
 
   return (
-    <div>
+    <div className="register-page">
       <h1>Register</h1>
 
-      <form style={formStyle} onSubmit={handleSubmit}>
+      <form className="register-form" onSubmit={handleSubmit}>
         <input
           placeholder="Nama Lengkap"
           onChange={(e) => setForm({ ...form, name: e.target.value })}
@@ -52,7 +45,9 @@ const Register = () => {
         <input
           placeholder="Konfirmasi Password"
           type="password"
-          onChange={(e) => setForm({ ...form, confirmPassword: e.target.value })}
+          onChange={(e) =>
+            setForm({ ...form, confirmPassword: e.target.value })
+          }
         />
 
         <button type="submit">Daftar</button>

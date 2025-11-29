@@ -1,15 +1,9 @@
 import React from "react";
+import "../assets/Footer.css"; // import CSS
 
 const Footer = () => {
   return (
-    <footer
-      style={{
-        marginTop: "50px",
-        padding: "20px",
-        textAlign: "center",
-        background: "#f1f1f1"
-      }}
-    >
+    <footer className="footer">
       <p>© 2025 My Blog</p>
     </footer>
   );

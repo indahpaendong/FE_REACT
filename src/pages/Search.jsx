@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../assets/Search.css";
 
 // Dummy data artikel
 const dummyPosts = [
@@ -10,13 +11,12 @@ const dummyPosts = [
 const Search = () => {
   const [query, setQuery] = useState("");
 
-  // Filter artikel berdasarkan judul
   const results = dummyPosts.filter((post) =>
     post.title.toLowerCase().includes(query.toLowerCase())
   );
 
   return (
-    <div>
+    <div className="search-container">
       <h1>Pencarian Artikel</h1>
 
       <input
@@ -24,15 +24,9 @@ const Search = () => {
         placeholder="Cari artikel..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        style={{
-          marginTop: "20px",
-          padding: "10px",
-          width: "300px",
-          fontSize: "16px",
-        }}
       />
 
-      <div style={{ marginTop: "20px" }}>
+      <div className="search-results">
         {results.length === 0 ? (
           <p>Tidak ada artikel ditemukan</p>
         ) : (
